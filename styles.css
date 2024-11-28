@@ -1,11 +1,9 @@
-/* Reset padrão */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo geral do corpo */
 body {
     font-family: Arial, sans-serif;
     background-image: url(programacao.jpg);
@@ -20,7 +18,7 @@ body {
     height: 100vh;
     margin: 0;
     text-align: center;
-    position: relative; /* Adicionado para suportar o ::before */
+    position: relative; 
 }
 
 body::before {
@@ -35,7 +33,6 @@ body::before {
     z-index: -1;
 }
 
-/* Cabeçalho */
 header h1 {
     font-size: 3rem;
     margin-bottom: 20px;
@@ -47,7 +44,6 @@ header h1 {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-/* Container de botões */
 .button-container {
     display: flex;
     flex-wrap: wrap;
@@ -74,14 +70,13 @@ header h1 {
     transform: translateY(-5px);
 }
 
-/* Novos estilos para suas seções */
 input[type="number"], input[type="text"], input[type="submit"], select {
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
     border: none;
     font-size: 1rem;
-    width: 80%; /* Adapta os inputs para telas menores */
+    width: 80%;
 }
 
 input[type="submit"] {
@@ -103,12 +98,11 @@ label {
     color: #f0f0f0;
 }
 
-/* Mensagens */
 .result-message {
     font-size: 1.5rem;
     font-weight: bold;
     margin-top: 20px;
-    color: #ffeb3b; /* Destaque para mensagens */
+    color: #ffeb3b;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
@@ -117,13 +111,18 @@ nav.button-container {
     padding: 15px;
     border-radius: 15px;
     background-color: rgba(0, 51, 102, 0.1);
-    position: fixed; /* Fixa o nav na parte superior */
-    top: 0; /* Define o posicionamento no topo */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta a centralização */
-    z-index: 1000; /* Garante que fique sobre outros elementos */
-    width: 100%; /* Ocupa a largura total */
-    max-width: 800px; /* Limita a largura máxima */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
-    text-align: center; /* Centraliza os links dentro do nav */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
 }
