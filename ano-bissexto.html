@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Ano Bissexto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="button-container">
+        <a href="index.html" class="button">Página inicial</a>
+        <a href="jogo-adivinhacao.html" class="button">Jogo de Adivinhação</a>
+        <a href="media-escolar.html" class="button">Calculadora de Média Escolar</a>
+        <a href="calculadora-gorjeta.html" class="button">Calculadora de Gorjeta</a>
+        <a href="saudacao-hora.html" class="button">Saudação de Acordo com a Hora</a>
+    </nav>
+    <h1>Verificador de Ano Bissexto</h1>
+    <p>Digite um ano:</p>
+    <input type="number" id="ano" placeholder="Exemplo: 2024">
+    <button onclick="verificarAno()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarAno() {
+            const ano = parseInt(document.getElementById("ano").value);
+            const bissexto = (ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0);
+
+            if (bissexto) {
+                document.getElementById("resultado").innerHTML = "O ano " + ano + " é bissexto!";
+            } else {
+                document.getElementById("resultado").innerHTML = "O ano " + ano + " não é bissexto.";
+            }
+        }
+    </script>
+</body>
+</html>

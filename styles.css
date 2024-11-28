@@ -1,0 +1,129 @@
+/* Reset padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(programacao.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #003366;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    position: relative; /* Adicionado para suportar o ::before */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* Cabeçalho */
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #7fb6f1, #003366, #7fb6f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Container de botões */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button {
+    text-decoration: none;
+    background-color: #003366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 5px 10px 20px rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s, background-color 0.3s;
+    width: 200px;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #00509e;
+    transform: translateY(-5px);
+}
+
+/* Novos estilos para suas seções */
+input[type="number"], input[type="text"], input[type="submit"], select {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    width: 80%; /* Adapta os inputs para telas menores */
+}
+
+input[type="submit"] {
+    background-color: #003366;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #00509e;
+    transform: translateY(-3px);
+}
+
+label {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    display: block;
+    color: #f0f0f0;
+}
+
+/* Mensagens */
+.result-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ffeb3b; /* Destaque para mensagens */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+nav.button-container {
+    border: 2px solid #003366;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(0, 51, 102, 0.1);
+    position: fixed; /* Fixa o nav na parte superior */
+    top: 0; /* Define o posicionamento no topo */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta a centralização */
+    z-index: 1000; /* Garante que fique sobre outros elementos */
+    width: 100%; /* Ocupa a largura total */
+    max-width: 800px; /* Limita a largura máxima */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+    text-align: center; /* Centraliza os links dentro do nav */
+}

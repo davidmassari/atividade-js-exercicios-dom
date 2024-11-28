@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Gorjeta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="button-container">
+        <a href="index.html" class="button">Página inicial</a>
+        <a href="jogo-adivinhacao.html" class="button">Jogo de Adivinhação</a>
+        <a href="ano-bissexto.html" class="button">Verificador de Ano Bissexto</a>
+        <a href="media-escolar.html" class="button">Calculadora de Média Escolar</a>
+        <a href="saudacao-hora.html" class="button">Saudação de Acordo com a Hora</a>
+    </nav>
+    <h1>Calculadora de Gorjeta</h1>
+    <p>Digite o valor da conta e escolha o nível de satisfação:</p>
+    <input type="number" id="valorConta" placeholder="Valor da conta">
+    <select id="satisfacao">
+        <option value="0.1">Bom (10%)</option>
+        <option value="0.15">Ótimo (15%)</option>
+        <option value="0.2">Excelente (20%)</option>
+    </select>
+    <button onclick="calcularGorjeta()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularGorjeta() {
+            const conta = parseFloat(document.getElementById("valorConta").value);
+            const satisfacao = parseFloat(document.getElementById("satisfacao").value);
+            const gorjeta = conta * satisfacao;
+            const total = conta + gorjeta;
+
+            document.getElementById("resultado").innerHTML = "Gorjeta: R$" + gorjeta.toFixed(2) + "<br>Total: R$" + total.toFixed(2);
+        }
+    </script>
+</body>
+</html>

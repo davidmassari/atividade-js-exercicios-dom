@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="button-container">
+        <a href="index.html" class="button">Página inicial</a>
+        <a href="ano-bissexto.html" class="button">Verificador de Ano Bissexto</a>
+        <a href="media-escolar.html" class="button">Calculadora de Média Escolar</a>
+        <a href="calculadora-gorjeta.html" class="button">Calculadora de Gorjeta</a>
+        <a href="saudacao-hora.html" class="button">Saudação de Acordo com a Hora</a>
+    </nav>
+    <h1>Jogo de Adivinhação</h1>
+    <p>Escolha um número entre 1 e 10:</p>
+    <input type="number" id="palpite" min="1" max="10" placeholder="Digite seu palpite">
+    <button onclick="verificarPalpite()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarPalpite() {
+            const palpiteUsuario = parseInt(document.getElementById("palpite").value);
+            const numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+
+            if (palpiteUsuario === numeroAleatorio) {
+                document.getElementById("resultado").innerHTML = "Parabéns, você acertou!";
+            } else {
+                document.getElementById("resultado").innerHTML = "Tente novamente! O número era " + numeroAleatorio + ".";
+            }
+        }
+    </script>
+</body>
+</html>
